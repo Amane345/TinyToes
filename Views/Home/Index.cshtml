@@ -1,0 +1,57 @@
+﻿
+
+@model HomeViewModel
+
+<partial name="_Carousel" />
+
+
+<div>
+
+
+    <div class="product">
+        <h2 style=" text-align: center;font-family: Algerian;font-size: 80px;color: gray;padding-left:600px;padding-top:200px;
+">
+            New<br /> Products<br />
+            <i class="fas fa_angle_Double_down" style="font-size:48px;color:gray;">&#xf103;</i>
+        </h2>
+    </div>
+
+    <div>
+        @foreach (var clothes in Model.ClothesInStock)
+        {
+            <partial name="_clothesCard" model="clothes" />
+
+        }
+    </div>
+
+    <div class="divsub col-lg-12">
+        <div class="subscribe">
+            <br /><br /><br />
+            <p>Subscribe to get the latest updates</p>
+            <form>
+                <input type="email" placeholder="Type your Email" required>
+                <br>
+                <button>Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="sale col-lg-12">
+        <h2 style="text-align:center; font-family:Algerian;font-size:120px;color:black;padding-top:100px;padding-left:650px
+">
+            50%<br />OFF<br />
+            <i class="fas fa_angle_Double_down" style="font-size:80px;color:black;">&#xf103;</i>
+        </h2>
+    </div>
+
+    <div>
+        @foreach (var clothes in Model.ClothesOnSale)
+
+        {
+            <partial name="_clothesCard" model="clothes" />
+        }
+
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>

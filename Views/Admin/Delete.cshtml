@@ -1,0 +1,55 @@
+﻿@model TinyToes.Models.Clothes
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Clothes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+       
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOnSale)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsOnSale)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsInStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsInStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ClothesId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

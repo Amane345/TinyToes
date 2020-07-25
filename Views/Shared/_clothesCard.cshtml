@@ -1,0 +1,21 @@
+﻿@model Clothes
+
+<div class="col-lg-4" >
+    <div class="thumbnail"style="margin:30px;" >
+        <img class="img-thumbnail" src="~/Images/@Model.ImageUrl" alt="image for clothes shop" />
+
+        <div class="row" style="margin-top:4px">
+
+            <div class="col-sm-6">
+                <h3 class="pull-right" style="margin:7px;margin-left:10px;float:left;">@Model.Price.ToString("c")</h3>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-primary" style="margin:7px;margin-right:10px;"
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-clothesId="@Model.ClothesId">Add to Cart</a>
+            </div>
+        </div>
+        </div>
+</div>
+
